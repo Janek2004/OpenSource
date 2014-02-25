@@ -11,9 +11,7 @@
 
 @interface JMCBeaconManager()<CLLocationManagerDelegate>
 {
-    CLBeaconRegion *beaconRegion;
-    CLBeaconRegion *beaconRegion2;
-    CLBeaconRegion *beaconRegion3;
+   
 }
 @property(nonatomic,strong)CLLocationManager * locationManager;
 @end
@@ -69,33 +67,17 @@
  Each beacon has a unique ID formatted as follows: proximityUUID.major.minor. We reserved the proximityUUID for all our beacons. The major and minor values are randomized by default but can be customized.
  */
 
--(void)registerBeaconWithProximityId:(NSString*)pid andIdentifier:(NSString *)identifier{
+-(void)registerBeaconWithProximityId:(NSString*)pid andIdentifier:(NSString *)identifier major:(int)major andMinor:(int)minor{
     NSUUID *proximityUUID = [[NSUUID alloc]
                              initWithUUIDString:pid];
-    
-    
-    beaconRegion = [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:1 minor:1 identifier:@"1"];
-    
-    beaconRegion = [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:1 identifier:@"1"];
-    
-    
-  //  beaconRegion2 = [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:1 minor:2 identifier:@"2"];
-   // beaconRegion3 = [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:1 minor:3 identifier:@"3"];
 
+    CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:major identifier:identifier];
+    
     beaconRegion.notifyOnEntry=YES;
     beaconRegion.notifyOnExit=YES;
     beaconRegion.notifyEntryStateOnDisplay=YES;
-    beaconRegion2.notifyOnEntry=YES;
-    beaconRegion2.notifyOnExit=YES;
-    beaconRegion2.notifyEntryStateOnDisplay=YES;
-    beaconRegion3.notifyOnEntry=YES;
-    beaconRegion3.notifyOnExit=YES;
-    beaconRegion3.notifyEntryStateOnDisplay=YES;
     
-//    [self.locationManager startMonitoringForRegion:beaconRegion3];
     [self.locationManager startMonitoringForRegion:beaconRegion];
-//  [self.locationManager startMonitoringForRegion:beaconRegion2];
-   
 }
 
 /*Tells the delegate that the user enter  specified region.*/

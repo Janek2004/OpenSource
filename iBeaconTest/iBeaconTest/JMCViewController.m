@@ -27,8 +27,9 @@
     _manager = [[JMCBeaconManager alloc]init];
     _manager.logView = self.logTextView;
     //get identifier
-    NSString * greenBeacon = [_manager generateID:BEACONID andMajor:MAJOR_ID andMinor:GREEN_MINOR];
-    [_manager registerBeaconWithProximityId:BEACONID andIdentifier:greenBeacon];
+    [_manager registerBeaconWithProximityId:BEACONID andIdentifier:@"Beacon Identifier 1" major:1 andMinor:1];
+    
+ 
 }
 
 

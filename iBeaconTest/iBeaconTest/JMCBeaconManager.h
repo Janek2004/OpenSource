@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface JMCBeaconManager : NSObject
--(void)registerBeaconWithProximityId:(NSString*)pid andIdentifier:(NSString *)identifier;
+
+-(void)registerBeaconWithProximityId:(NSString*)pid andIdentifier:(NSString *)identifier major:(int)major andMinor:(int)minor;
+
 -(NSString *)generateID:(NSString *)beaconId andMajor:(NSString *)major andMinor:(NSString *)minor;
 @property(nonatomic,strong)UITextView * logView;
 
