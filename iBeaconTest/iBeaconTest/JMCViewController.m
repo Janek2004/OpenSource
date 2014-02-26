@@ -8,8 +8,10 @@
 
 #import "JMCViewController.h"
 #import "JMCBeaconManager.h"
+
+//the main id of the beacon in the production version we will need to keep reference to this number in some kind of online database
+
 #define BEACONID @"B9407F30-F5F8-466E-AFF9-25556B57FE6D"
-#define MAJOR_ID @"10000"
 #define GREEN_MINOR @"1"
 
 
@@ -26,7 +28,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     _manager = [[JMCBeaconManager alloc]init];
     _manager.logView = self.logTextView;
-    //get identifier
+
+    //Registering the region
     [_manager registerBeaconWithProximityId:BEACONID andIdentifier:@"Beacon Identifier 1" major:1 andMinor:1];
     
  
