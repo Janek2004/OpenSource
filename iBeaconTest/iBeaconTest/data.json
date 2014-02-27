@@ -1,0 +1,22 @@
+{
+beacons:
+[{
+    id:"",
+    minor:"",
+    major:"",
+    immediate: "Shoes",
+    near: "DiscountedProducts";
+    far: "Store";
+},
+{
+    id:"",
+    minor:"",
+    major:"",
+    immediate:"Shelves with books",
+    near:"Library";
+    far: "WelcomeUWF";
+}
+]
+
+
+}

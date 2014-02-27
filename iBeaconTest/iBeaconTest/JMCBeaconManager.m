@@ -14,6 +14,7 @@
    
 }
 @property(nonatomic,strong)CLLocationManager * locationManager;
+@property(nonatomic,strong) CLBeacon * currentBeacon;
 @end
 
 
@@ -135,7 +136,28 @@
     for(CLBeacon *beacon in beacons)
     {
         [self logMessage:[NSString stringWithFormat:@"Beacon found: %@",beacon]];
-        NSLog(@"Beacon found: %@",beacon);
+         NSLog(@"Beacon found: %@",beacon);
+        [self displayContentFor:beacon andRegion:region];
+    }
+}
+
+/* this method will display a content related to the closest beacon */
+-(void)displayContentFor:(CLBeacon * )beacon andRegion:(CLRegion *)region{
+    if(!_currentBeacon){
+        _currentBeacon = beacon;
+    }
+    else{
+        if([_currentBeacon.proximityUUID isEqual:_currentBeacon.proximityUUID]&&_currentBeacon.major ==_currentBeacon.major&&_currentBeacon.minor == _currentBeacon.minor)
+        {
+            
+            if(_currentBeacon.proximity == beacon.proximity){
+               //don't change it
+                
+            } //same beacon but different proximity
+            else{
+            
+            }
+        }
     }
 }
 
