@@ -505,6 +505,7 @@
 				8243B65518BEECE100124EC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8243B65618BEECE100124EC4 /* Build configuration list for PBXNativeTarget "BeaconPresentationTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +514,7 @@
 				8243B65818BEECE100124EC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
