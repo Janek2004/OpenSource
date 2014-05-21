@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		828DB577192C4658008A6344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828DB576192C4658008A6344 /* Foundation.framework */; };
+		828DB579192C4658008A6344 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828DB578192C4658008A6344 /* CoreGraphics.framework */; };
+		828DB57B192C4658008A6344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828DB57A192C4658008A6344 /* UIKit.framework */; };
+		828DB581192C4658008A6344 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 828DB57F192C4658008A6344 /* InfoPlist.strings */; };
+		828DB583192C4658008A6344 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 828DB582192C4658008A6344 /* main.m */; };
+		828DB587192C4658008A6344 /* JMCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 828DB586192C4658008A6344 /* JMCAppDelegate.m */; };
+		828DB58A192C4658008A6344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828DB588192C4658008A6344 /* Main.storyboard */; };
+		828DB58D192C4658008A6344 /* JMCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 828DB58C192C4658008A6344 /* JMCViewController.m */; };
+		828DB58F192C4658008A6344 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 828DB58E192C4658008A6344 /* Images.xcassets */; };
+		828DB596192C4659008A6344 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828DB595192C4659008A6344 /* XCTest.framework */; };
+		828DB597192C4659008A6344 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828DB576192C4658008A6344 /* Foundation.framework */; };
+		828DB598192C4659008A6344 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 828DB57A192C4658008A6344 /* UIKit.framework */; };
+		828DB5A0192C4659008A6344 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 828DB59E192C4659008A6344 /* InfoPlist.strings */; };
+		828DB5A2192C4659008A6344 /* CoreAnimationFunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 828DB5A1192C4659008A6344 /* CoreAnimationFunTests.m */; };
+		828DB5B9192C468A008A6344 /* Ceres.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5AC192C468A008A6344 /* Ceres.png */; };
+		828DB5BA192C468A008A6344 /* Earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5AD192C468A008A6344 /* Earth.png */; };
+		828DB5BB192C468A008A6344 /* Eris.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5AE192C468A008A6344 /* Eris.png */; };
+		828DB5BC192C468A008A6344 /* Jupiter.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5AF192C468A008A6344 /* Jupiter.png */; };
+		828DB5BD192C468A008A6344 /* Mars.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5B0192C468A008A6344 /* Mars.png */; };
+		828DB5BE192C468A008A6344 /* Mercury.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5B1192C468A008A6344 /* Mercury.png */; };
+		828DB5BF192C468A008A6344 /* Moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5B2192C468A008A6344 /* Moon.png */; };
+		828DB5C0192C468A008A6344 /* Neptune.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5B3192C468A008A6344 /* Neptune.png */; };
+		828DB5C1192C468A008A6344 /* Pluto.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5B4192C468A008A6344 /* Pluto.png */; };
+		828DB5C2192C468A008A6344 /* Saturn.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5B5192C468A008A6344 /* Saturn.png */; };
+		828DB5C3192C468A008A6344 /* Sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5B6192C468A008A6344 /* Sun.png */; };
+		828DB5C4192C468A008A6344 /* Uranus.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5B7192C468A008A6344 /* Uranus.png */; };
+		828DB5C5192C468A008A6344 /* Venus.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5B8192C468A008A6344 /* Venus.png */; };
+		828DB5C7192C4692008A6344 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5C6192C4692008A6344 /* license.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		828DB599192C4659008A6344 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 828DB56B192C4658008A6344 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 828DB572192C4658008A6344;
+			remoteInfo = CoreAnimationFun;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		828DB573192C4658008A6344 /* CoreAnimationFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		828DB576192C4658008A6344 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		828DB578192C4658008A6344 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		828DB57A192C4658008A6344 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		828DB57E192C4658008A6344 /* CoreAnimationFun-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreAnimationFun-Info.plist"; sourceTree = "<group>"; };
+		828DB580192C4658008A6344 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		828DB582192C4658008A6344 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		828DB584192C4658008A6344 /* CoreAnimationFun-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreAnimationFun-Prefix.pch"; sourceTree = "<group>"; };
+		828DB585192C4658008A6344 /* JMCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMCAppDelegate.h; sourceTree = "<group>"; };
+		828DB586192C4658008A6344 /* JMCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMCAppDelegate.m; sourceTree = "<group>"; };
+		828DB589192C4658008A6344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		828DB58B192C4658008A6344 /* JMCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMCViewController.h; sourceTree = "<group>"; };
+		828DB58C192C4658008A6344 /* JMCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMCViewController.m; sourceTree = "<group>"; };
+		828DB58E192C4658008A6344 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		828DB594192C4659008A6344 /* CoreAnimationFunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreAnimationFunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		828DB595192C4659008A6344 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		828DB59D192C4659008A6344 /* CoreAnimationFunTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreAnimationFunTests-Info.plist"; sourceTree = "<group>"; };
+		828DB59F192C4659008A6344 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		828DB5A1192C4659008A6344 /* CoreAnimationFunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationFunTests.m; sourceTree = "<group>"; };
+		828DB5AC192C468A008A6344 /* Ceres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ceres.png; sourceTree = "<group>"; };
+		828DB5AD192C468A008A6344 /* Earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Earth.png; sourceTree = "<group>"; };
+		828DB5AE192C468A008A6344 /* Eris.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eris.png; sourceTree = "<group>"; };
+		828DB5AF192C468A008A6344 /* Jupiter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jupiter.png; sourceTree = "<group>"; };
+		828DB5B0192C468A008A6344 /* Mars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mars.png; sourceTree = "<group>"; };
+		828DB5B1192C468A008A6344 /* Mercury.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mercury.png; sourceTree = "<group>"; };
+		828DB5B2192C468A008A6344 /* Moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Moon.png; sourceTree = "<group>"; };
+		828DB5B3192C468A008A6344 /* Neptune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neptune.png; sourceTree = "<group>"; };
+		828DB5B4192C468A008A6344 /* Pluto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pluto.png; sourceTree = "<group>"; };
+		828DB5B5192C468A008A6344 /* Saturn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Saturn.png; sourceTree = "<group>"; };
+		828DB5B6192C468A008A6344 /* Sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sun.png; sourceTree = "<group>"; };
+		828DB5B7192C468A008A6344 /* Uranus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Uranus.png; sourceTree = "<group>"; };
+		828DB5B8192C468A008A6344 /* Venus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Venus.png; sourceTree = "<group>"; };
+		828DB5C6192C4692008A6344 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		828DB570192C4658008A6344 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828DB579192C4658008A6344 /* CoreGraphics.framework in Frameworks */,
+				828DB57B192C4658008A6344 /* UIKit.framework in Frameworks */,
+				828DB577192C4658008A6344 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828DB591192C4659008A6344 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828DB596192C4659008A6344 /* XCTest.framework in Frameworks */,
+				828DB598192C4659008A6344 /* UIKit.framework in Frameworks */,
+				828DB597192C4659008A6344 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		828DB56A192C4658008A6344 = {
+			isa = PBXGroup;
+			children = (
+				828DB5AB192C4678008A6344 /* Planets */,
+				828DB57C192C4658008A6344 /* CoreAnimationFun */,
+				828DB59B192C4659008A6344 /* CoreAnimationFunTests */,
+				828DB575192C4658008A6344 /* Frameworks */,
+				828DB574192C4658008A6344 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		828DB574192C4658008A6344 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				828DB573192C4658008A6344 /* CoreAnimationFun.app */,
+				828DB594192C4659008A6344 /* CoreAnimationFunTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		828DB575192C4658008A6344 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				828DB576192C4658008A6344 /* Foundation.framework */,
+				828DB578192C4658008A6344 /* CoreGraphics.framework */,
+				828DB57A192C4658008A6344 /* UIKit.framework */,
+				828DB595192C4659008A6344 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		828DB57C192C4658008A6344 /* CoreAnimationFun */ = {
+			isa = PBXGroup;
+			children = (
+				828DB585192C4658008A6344 /* JMCAppDelegate.h */,
+				828DB586192C4658008A6344 /* JMCAppDelegate.m */,
+				828DB588192C4658008A6344 /* Main.storyboard */,
+				828DB58B192C4658008A6344 /* JMCViewController.h */,
+				828DB58C192C4658008A6344 /* JMCViewController.m */,
+				828DB58E192C4658008A6344 /* Images.xcassets */,
+				828DB57D192C4658008A6344 /* Supporting Files */,
+			);
+			path = CoreAnimationFun;
+			sourceTree = "<group>";
+		};
+		828DB57D192C4658008A6344 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				828DB57E192C4658008A6344 /* CoreAnimationFun-Info.plist */,
+				828DB57F192C4658008A6344 /* InfoPlist.strings */,
+				828DB582192C4658008A6344 /* main.m */,
+				828DB584192C4658008A6344 /* CoreAnimationFun-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		828DB59B192C4659008A6344 /* CoreAnimationFunTests */ = {
+			isa = PBXGroup;
+			children = (
+				828DB5A1192C4659008A6344 /* CoreAnimationFunTests.m */,
+				828DB59C192C4659008A6344 /* Supporting Files */,
+			);
+			path = CoreAnimationFunTests;
+			sourceTree = "<group>";
+		};
+		828DB59C192C4659008A6344 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				828DB59D192C4659008A6344 /* CoreAnimationFunTests-Info.plist */,
+				828DB59E192C4659008A6344 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		828DB5AB192C4678008A6344 /* Planets */ = {
+			isa = PBXGroup;
+			children = (
+				828DB5C6192C4692008A6344 /* license.txt */,
+				828DB5AC192C468A008A6344 /* Ceres.png */,
+				828DB5AD192C468A008A6344 /* Earth.png */,
+				828DB5AE192C468A008A6344 /* Eris.png */,
+				828DB5AF192C468A008A6344 /* Jupiter.png */,
+				828DB5B0192C468A008A6344 /* Mars.png */,
+				828DB5B1192C468A008A6344 /* Mercury.png */,
+				828DB5B2192C468A008A6344 /* Moon.png */,
+				828DB5B3192C468A008A6344 /* Neptune.png */,
+				828DB5B4192C468A008A6344 /* Pluto.png */,
+				828DB5B5192C468A008A6344 /* Saturn.png */,
+				828DB5B6192C468A008A6344 /* Sun.png */,
+				828DB5B7192C468A008A6344 /* Uranus.png */,
+				828DB5B8192C468A008A6344 /* Venus.png */,
+			);
+			name = Planets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		828DB572192C4658008A6344 /* CoreAnimationFun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 828DB5A5192C4659008A6344 /* Build configuration list for PBXNativeTarget "CoreAnimationFun" */;
+			buildPhases = (
+				828DB56F192C4658008A6344 /* Sources */,
+				828DB570192C4658008A6344 /* Frameworks */,
+				828DB571192C4658008A6344 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreAnimationFun;
+			productName = CoreAnimationFun;
+			productReference = 828DB573192C4658008A6344 /* CoreAnimationFun.app */;
+			productType = "com.apple.product-type.application";
+		};
+		828DB593192C4659008A6344 /* CoreAnimationFunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 828DB5A8192C4659008A6344 /* Build configuration list for PBXNativeTarget "CoreAnimationFunTests" */;
+			buildPhases = (
+				828DB590192C4659008A6344 /* Sources */,
+				828DB591192C4659008A6344 /* Frameworks */,
+				828DB592192C4659008A6344 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				828DB59A192C4659008A6344 /* PBXTargetDependency */,
+			);
+			name = CoreAnimationFunTests;
+			productName = CoreAnimationFunTests;
+			productReference = 828DB594192C4659008A6344 /* CoreAnimationFunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		828DB56B192C4658008A6344 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JMC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Janusz Chudzynski";
+				TargetAttributes = {
+					828DB593192C4659008A6344 = {
+						TestTargetID = 828DB572192C4658008A6344;
+					};
+				};
+			};
+			buildConfigurationList = 828DB56E192C4658008A6344 /* Build configuration list for PBXProject "CoreAnimationFun" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 828DB56A192C4658008A6344;
+			productRefGroup = 828DB574192C4658008A6344 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				828DB572192C4658008A6344 /* CoreAnimationFun */,
+				828DB593192C4659008A6344 /* CoreAnimationFunTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		828DB571192C4658008A6344 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828DB5C1192C468A008A6344 /* Pluto.png in Resources */,
+				828DB5BB192C468A008A6344 /* Eris.png in Resources */,
+				828DB58F192C4658008A6344 /* Images.xcassets in Resources */,
+				828DB5BF192C468A008A6344 /* Moon.png in Resources */,
+				828DB581192C4658008A6344 /* InfoPlist.strings in Resources */,
+				828DB5B9192C468A008A6344 /* Ceres.png in Resources */,
+				828DB5BA192C468A008A6344 /* Earth.png in Resources */,
+				828DB5BC192C468A008A6344 /* Jupiter.png in Resources */,
+				828DB5BE192C468A008A6344 /* Mercury.png in Resources */,
+				828DB5C2192C468A008A6344 /* Saturn.png in Resources */,
+				828DB5C4192C468A008A6344 /* Uranus.png in Resources */,
+				828DB5C7192C4692008A6344 /* license.txt in Resources */,
+				828DB5C3192C468A008A6344 /* Sun.png in Resources */,
+				828DB5BD192C468A008A6344 /* Mars.png in Resources */,
+				828DB5C5192C468A008A6344 /* Venus.png in Resources */,
+				828DB5C0192C468A008A6344 /* Neptune.png in Resources */,
+				828DB58A192C4658008A6344 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828DB592192C4659008A6344 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828DB5A0192C4659008A6344 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		828DB56F192C4658008A6344 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828DB583192C4658008A6344 /* main.m in Sources */,
+				828DB587192C4658008A6344 /* JMCAppDelegate.m in Sources */,
+				828DB58D192C4658008A6344 /* JMCViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828DB590192C4659008A6344 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828DB5A2192C4659008A6344 /* CoreAnimationFunTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		828DB59A192C4659008A6344 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 828DB572192C4658008A6344 /* CoreAnimationFun */;
+			targetProxy = 828DB599192C4659008A6344 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		828DB57F192C4658008A6344 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				828DB580192C4658008A6344 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		828DB588192C4658008A6344 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				828DB589192C4658008A6344 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		828DB59E192C4659008A6344 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				828DB59F192C4659008A6344 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		828DB5A3192C4659008A6344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		828DB5A4192C4659008A6344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		828DB5A6192C4659008A6344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreAnimationFun/CoreAnimationFun-Prefix.pch";
+				INFOPLIST_FILE = "CoreAnimationFun/CoreAnimationFun-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		828DB5A7192C4659008A6344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreAnimationFun/CoreAnimationFun-Prefix.pch";
+				INFOPLIST_FILE = "CoreAnimationFun/CoreAnimationFun-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		828DB5A9192C4659008A6344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CoreAnimationFun.app/CoreAnimationFun";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreAnimationFun/CoreAnimationFun-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CoreAnimationFunTests/CoreAnimationFunTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		828DB5AA192C4659008A6344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CoreAnimationFun.app/CoreAnimationFun";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreAnimationFun/CoreAnimationFun-Prefix.pch";
+				INFOPLIST_FILE = "CoreAnimationFunTests/CoreAnimationFunTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		828DB56E192C4658008A6344 /* Build configuration list for PBXProject "CoreAnimationFun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828DB5A3192C4659008A6344 /* Debug */,
+				828DB5A4192C4659008A6344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		828DB5A5192C4659008A6344 /* Build configuration list for PBXNativeTarget "CoreAnimationFun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828DB5A6192C4659008A6344 /* Debug */,
+				828DB5A7192C4659008A6344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		828DB5A8192C4659008A6344 /* Build configuration list for PBXNativeTarget "CoreAnimationFunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828DB5A9192C4659008A6344 /* Debug */,
+				828DB5AA192C4659008A6344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 828DB56B192C4658008A6344 /* Project object */;
+}
