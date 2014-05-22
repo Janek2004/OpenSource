@@ -35,6 +35,8 @@
 		828DB5C4192C468A008A6344 /* Uranus.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5B7192C468A008A6344 /* Uranus.png */; };
 		828DB5C5192C468A008A6344 /* Venus.png in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5B8192C468A008A6344 /* Venus.png */; };
 		828DB5C7192C4692008A6344 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 828DB5C6192C4692008A6344 /* license.txt */; };
+		828DB5CA192D6717008A6344 /* JMCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 828DB5C9192D6717008A6344 /* JMCView.m */; };
+		828DB5CD192D6787008A6344 /* JMCConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 828DB5CC192D6787008A6344 /* JMCConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,10 @@
 		828DB5B7192C468A008A6344 /* Uranus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Uranus.png; sourceTree = "<group>"; };
 		828DB5B8192C468A008A6344 /* Venus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Venus.png; sourceTree = "<group>"; };
 		828DB5C6192C4692008A6344 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		828DB5C8192D6717008A6344 /* JMCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMCView.h; sourceTree = "<group>"; };
+		828DB5C9192D6717008A6344 /* JMCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCView.m; sourceTree = "<group>"; };
+		828DB5CB192D6787008A6344 /* JMCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMCConstants.h; sourceTree = "<group>"; };
+		828DB5CC192D6787008A6344 /* JMCConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMCConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,10 @@
 				828DB585192C4658008A6344 /* JMCAppDelegate.h */,
 				828DB586192C4658008A6344 /* JMCAppDelegate.m */,
 				828DB588192C4658008A6344 /* Main.storyboard */,
+				828DB5C8192D6717008A6344 /* JMCView.h */,
+				828DB5C9192D6717008A6344 /* JMCView.m */,
+				828DB5CB192D6787008A6344 /* JMCConstants.h */,
+				828DB5CC192D6787008A6344 /* JMCConstants.m */,
 				828DB58B192C4658008A6344 /* JMCViewController.h */,
 				828DB58C192C4658008A6344 /* JMCViewController.m */,
 				828DB58E192C4658008A6344 /* Images.xcassets */,
@@ -315,6 +325,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				828DB583192C4658008A6344 /* main.m in Sources */,
+				828DB5CA192D6717008A6344 /* JMCView.m in Sources */,
+				828DB5CD192D6787008A6344 /* JMCConstants.m in Sources */,
 				828DB587192C4658008A6344 /* JMCAppDelegate.m in Sources */,
 				828DB58D192C4658008A6344 /* JMCViewController.m in Sources */,
 			);
