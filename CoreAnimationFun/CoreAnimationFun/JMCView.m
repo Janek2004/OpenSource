@@ -215,6 +215,10 @@
    
      _moon.layer.anchorPoint = CGPointMake(1, 1);
     [_moon.layer addAnimation:orbit forKey:@"orbit"];
+    
+    
+    
+    
 }
 
 -(void)animateObject:(UIImageView *)object duration:(int)duration boundingRect:(CGRect)boundingRect key:(NSString *)key radius:(float)radius{
