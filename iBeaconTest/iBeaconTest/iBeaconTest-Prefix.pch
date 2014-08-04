@@ -13,4 +13,8 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #define BEACON_UUID @"B9407F30-F5F8-466E-AFF9-25556B57FE6D"
+    #define GREEN_MINOR @"1"
 #endif
+

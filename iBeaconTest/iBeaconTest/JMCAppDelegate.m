@@ -7,11 +7,31 @@
 //
 
 #import "JMCAppDelegate.h"
+#import "JMCBeaconManager.h"
+
+@interface JMCAppDelegate()
+ @property(nonatomic, strong) JMCBeaconManager * beaconManager;
+@end
+
 
 @implementation JMCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    
+   _beaconManager = [JMCBeaconManager new];
+
+    NSMutableString * message =[NSMutableString new];
+    if([_beaconManager isSupported:message]){
+        [_beaconManager registerBeaconWithProximityId:BEACON_UUID andIdentifier:@"ATC BEACON" major:-1 andMinor:-1];
+    }
+    else {
+        NSLog(@"Message: %@ %s",message,__PRETTY_FUNCTION__);
+    }
+   
+    
+ 
     // Override point for customization after application launch.
     return YES;
 }
@@ -26,6 +46,10 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    
+    
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
