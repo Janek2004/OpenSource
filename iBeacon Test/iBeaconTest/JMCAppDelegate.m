@@ -24,7 +24,11 @@
 
     NSMutableString * message =[NSMutableString new];
     if([_beaconManager isSupported:message]){
-        [_beaconManager registerBeaconWithProximityId:BEACON_UUID andIdentifier:@"ATC BEACON" major:-1 andMinor:-1];
+        [_beaconManager registerRegionWithProximityId:BEACON_UUID
+                                        andIdentifier:@"ATC" major:-1 andMinor:-1];
+//        [_beaconManager registerBeaconWithProximityId:BEACON_UUID andIdentifier:@"ATC BEACON" major:-1 andMinor:-1];
+   
+        
     }
     else {
         NSLog(@"Message: %@ %s",message,__PRETTY_FUNCTION__);

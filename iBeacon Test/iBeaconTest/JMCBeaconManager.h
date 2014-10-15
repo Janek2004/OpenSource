@@ -2,41 +2,30 @@
 //  JMCBeaconManager.h
 //  iBeaconTest
 //
-//  Created by sadmin on 2/21/14.
-//  Copyright (c) 2014 JanuszChudzynski. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
-
-@import CoreLocation;
 /**
  *  Class that can be used to monitor nearby beacons. To use it you should follow the steps:
  1. Check if beacons are supported calling isSupported method
  2. Register regions to monitor
  3. Specify beaconFound block to monitor beacons.
-*/
+ 
+ */
+
+#import <Foundation/Foundation.h>
+
+@import CoreLocation;
+
 @interface JMCBeaconManager : NSObject
 
 /**
-*  Description:  Registers beacons using major and minor identifier
+*  Description:  Registers beacon's region using major and minor identifier
 *
 *  @param pid        beacon identifier used internally
 *  @param identifier beacon identifier
 *  @param major      major identifier
 *  @param minor      minor identifier
 */
--(void)registerBeaconWithProximityId:(NSString*)pid andIdentifier:(NSString *)identifier major:(int)major andMinor:(int)minor;
+-(void)registerRegionWithProximityId:(NSString*)pid andIdentifier:(NSString *)identifier major:(int)major andMinor:(int)minor;
 
-/**
- *  Generates unique ID
- *
- *  @param beaconId beacon identifier
- *  @param major    beacon major
- *  @param minor    beacon minor
- *
- *  @return returns string with unique identifier
- */
--(NSString *)generateID:(NSString *)beaconId andMajor:(NSString *)major andMinor:(NSString *)minor;
 
 /**
  *  Checks if beacon is supported
@@ -46,6 +35,19 @@
  *  @return boolean that indicates if device supports beacons or not
  */
 -(BOOL)isSupported:(NSMutableString*)message;
+
+/**
+ *  Appends message to the log file
+ *
+ *  @param message message to save
+ */
+-(void)saveLog:(NSString *)message;
+/**
+ *  Getting the log
+ *
+ *  @return log as string
+ */
+-(NSString *)getLog;
 
 /**
  *  View used for loggin the events
@@ -59,6 +61,9 @@
 /**
  *  Block used for monitoring region events
  */
-@property(nonatomic, copy) void (^regionEvent)(int major, int minor, BOOL entered);
+@property(nonatomic, copy) void (^regionEvent)(int major, int minor, NSUInteger state);
+
+
+
 
 @end

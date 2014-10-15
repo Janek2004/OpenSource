@@ -8,10 +8,13 @@
 
 
 #import "JMCBeaconManager.h"
+@import AudioToolbox;
 
 @interface JMCBeaconManager()<CLLocationManagerDelegate>
 {
     CLProximity proximity;
+    int counter;
+    
 }
 @property(nonatomic,strong)CLLocationManager * locationManager;
 @property(nonatomic,strong) CLBeacon * currentBeacon;
@@ -21,17 +24,26 @@
 @implementation JMCBeaconManager
 
 
+
 -(void)logMessage:(NSString *)message{
-    self.logView.text = [NSString stringWithFormat:@"%@\n %@\n\n%@", [NSDate new],message,self.logView.text];
-    NSLog(@"%@ %s ",message,__PRETTY_FUNCTION__);
+    
+    message =[NSString stringWithFormat:@"%@\r\n %@ \r\n %@", [NSDate new],message,self.logView.text];
+    self.logView.text = message;
+   
+    NSLog(@"\n %@ \n ",message);
+    [self saveLog:message];
 }
+
 
 -(id)init{
     self = [super init];
     if(self){
         _locationManager = [[CLLocationManager alloc]init];
+        [_locationManager requestAlwaysAuthorization];
+        
         _locationManager.delegate = self;
-         [_locationManager startUpdatingLocation];
+              counter =0;
+       
     }
     return self;
 }
@@ -128,7 +140,9 @@
     beaconRegion.notifyEntryStateOnDisplay=YES;
     
     [self.locationManager startMonitoringForRegion:beaconRegion];
-    
+    [self.locationManager startRangingBeaconsInRegion:beaconRegion];
+    [self.locationManager startUpdatingLocation];
+    [self.locationManager performSelector:@selector(requestStateForRegion:) withObject:beaconRegion afterDelay:1];
 }
 
 /**
@@ -137,30 +151,40 @@
  Each beacon has a unique ID formatted as follows: proximityUUID.major.minor. We reserved the proximityUUID for all our beacons. The major and minor values are randomized by default but can be customized.
  */
 
--(void)registerBeaconWithProximityId:(NSString*)pid andIdentifier:(NSString *)identifier major:(int)major andMinor:(int)minor{
+-(void)registerRegionWithProximityId:(NSString*)pid andIdentifier:(NSString *)identifier major:(int)major andMinor:(int)minor{
     NSUUID *proximityUUID = [[NSUUID alloc]
                              initWithUUIDString:pid];
     
-    CLBeaconRegion *beaconRegion;// = [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:major identifier:identifier];
-    beaconRegion= [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID identifier:identifier];
+    if(major==-1 && minor==-1){
+        [self registerBeaconWithProximityId:pid andIdentifier:identifier];
+        return;
+    }
+    
+    CLBeaconRegion *beaconRegion;
+    beaconRegion= [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:major minor:minor identifier:identifier];
+   
     
     beaconRegion.notifyOnEntry=YES;
     beaconRegion.notifyOnExit=YES;
     beaconRegion.notifyEntryStateOnDisplay=YES;
     
     [self.locationManager startMonitoringForRegion:beaconRegion];
+    [self.locationManager startUpdatingLocation];
+    [self.locationManager performSelector:@selector(requestStateForRegion:) withObject:beaconRegion afterDelay:1];
+    [self.locationManager startRangingBeaconsInRegion:beaconRegion];
 }
 
 /**Tells the delegate that the user enter  specified region.*/
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
+    
     NSString * log = [NSString stringWithFormat:@"%s",__PRETTY_FUNCTION__];
     [self logMessage:log];
     NSLog(@"%@",log);
+    
+
+    
     if([region isKindOfClass:[CLBeaconRegion class]]){
         [self.locationManager startRangingBeaconsInRegion:(CLBeaconRegion *) region];
-        if(self.regionEvent){
-            self.regionEvent([[(CLBeaconRegion *) region major]intValue],[[(CLBeaconRegion *) region minor]intValue],YES);
-                             }
     }
     
     
@@ -177,42 +201,35 @@
     
     if([region isKindOfClass:[CLBeaconRegion class]]){
        [self.locationManager stopRangingBeaconsInRegion:(CLBeaconRegion *)region];
-        if(self.regionEvent){
-            self.regionEvent([[(CLBeaconRegion *) region major]intValue],[[(CLBeaconRegion *) region minor]intValue],NO);
-        }
-
+       
     }
 }
 
 /** Tells the delegate about the state of the specified region. (required) */
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region{
     NSString * log = [NSString stringWithFormat:@"%s",__PRETTY_FUNCTION__];
+    
+    
+    if([region isKindOfClass:[CLBeaconRegion class]]){   //check if the region is beacon region
+
     [self logMessage:log];
-    [self logMessage:[NSString stringWithFormat:@"State for region: %@ is: %d",region, (int)state]];
     
+    [self logMessage:[NSString stringWithFormat:@"State for region: %@ is: %d %@ %@",region, (int)state, [(CLBeaconRegion *) region major], [(CLBeaconRegion *) region minor]]];
     
-    
-    NSLog(@"%@",log);
-    
+    if(self.regionEvent){
+        self.regionEvent([[(CLBeaconRegion *) region major]intValue],[[(CLBeaconRegion *) region minor]intValue],(NSUInteger)state );
+    }
+  
     if(state == CLRegionStateInside){
-        //check if the region is beacon region
-        if([region isKindOfClass:[CLBeaconRegion class]]){
-            //start ranging beacons
+             //start ranging beacons
             [self.locationManager startRangingBeaconsInRegion:(CLBeaconRegion *) region];
+      
         }
     }
 }
 
 
-/**Generates id that can be used as an identifier of the beacon */
--(NSString *)generateID:(NSString *)beaconId andMajor:(NSString *)major andMinor:(NSString *)minor{
-    //according to estimote id has format: proximityUUID.major.minor
-    NSString * log = [NSString stringWithFormat:@"%s",__PRETTY_FUNCTION__];
-    [self logMessage:log];
-    NSLog(@"%@",log);
-    
-    return [NSString stringWithFormat:@"%@.%@.%@",beaconId,major,minor];
-}
+
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
@@ -222,15 +239,15 @@
     UIAlertView *errorAlert = [[UIAlertView alloc]     initWithTitle:NSLocalizedString(@"application_name", nil) message:NSLocalizedString(@"location_error", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", nil) otherButtonTitles:nil];
     
     [errorAlert show];
+    [self logMessage:error.debugDescription];
+    
 }
 
 /**Tells the delegate that one or more beacons are in range. */
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region{
-    
+
     for(CLBeacon *beacon in beacons)
     {
-        
-        if(proximity != beacon.proximity){
             proximity = beacon.proximity;
             [self logMessage:[NSString stringWithFormat:@"Beacon range: %@",beacon]];
             NSLog(@"Beacon proximity is: %d",(int)beacon.proximity);
@@ -238,15 +255,17 @@
             if(self.beaconFound){
                 self.beaconFound(beacon.major.intValue, beacon.minor.intValue, beacon.proximity);
             }
-        }
-        //  [self displayContentFor:beacon andRegion:region];
     }
     
-    
-    //[self.locationManager stopRangingBeaconsInRegion:region];
+    if(counter>30==1){
+        [self logMessage:[NSString stringWithFormat:@"%s",__PRETTY_FUNCTION__]];
+       counter =0;
+    }
+    counter++;
+
 }
 
-/** this method will display a content related to the closest beacon */
+/** this method can be used to display a content related to the closest beacon */
 -(void)displayContentFor:(CLBeacon * )beacon andRegion:(CLRegion *)region{
     if(!_currentBeacon){
         _currentBeacon = beacon;
@@ -292,7 +311,70 @@
     NSLog(@"%@ %s",log, __PRETTY_FUNCTION__);
     
 }
+/**
+ *  Get content of a log file as a string
+ *
+ *  @return string with log information
+ */
 
+-(NSString *)getLog{
+    NSString * log = @"";
+    NSString * docs = [self applicationDocumentsDirectory];
+    NSString * filePath = [docs stringByAppendingPathComponent:@"log.txt"];
+    if([[NSFileManager defaultManager]fileExistsAtPath:filePath]){
+        NSError *e;
+        NSString * existingFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&e];
+        if(e){
+            NSLog(@"%s %@",__PRETTY_FUNCTION__, e.debugDescription);
+        }
+        else{
+            log = existingFile;
+        }
+    }
+    return log;
+}
+
+/**
+ *  Save's a log to txt log file
+ *
+ *  @param string Message to save
+ */
+-(void)saveLog:(NSString *)string{
+    
+    NSString * stringToSave= @"";
+    NSString * docs = [self applicationDocumentsDirectory];
+    NSString * filePath = [docs stringByAppendingPathComponent:@"log.txt"];
+    if([[NSFileManager defaultManager]fileExistsAtPath:filePath]){
+        NSError *e;
+      //  NSData * d= [NSData dataWithContentsOfFile:filePath];
+        NSString * existingFile = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&e];
+        if(e){
+            NSLog(@"%s %@",__PRETTY_FUNCTION__, e.debugDescription);
+        }
+        else{
+            stringToSave = [NSString stringWithFormat:@"/r/n %@ %@", existingFile, string];
+            
+        }
+    }
+    else{
+        stringToSave = string;
+    }
+   NSData *d = [stringToSave dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [d writeToFile:filePath atomically:YES];
+    
+}
+/**
+ *  Immortal documents path
+ *
+ *  @return document's path
+ */
+- (NSString *) applicationDocumentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    return basePath;
+}
 
 
 
