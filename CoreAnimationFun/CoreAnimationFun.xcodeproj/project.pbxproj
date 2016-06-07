@@ -457,6 +457,7 @@
 				GCC_PREFIX_HEADER = "CoreAnimationFun/CoreAnimationFun-Prefix.pch";
 				INFOPLIST_FILE = "CoreAnimationFun/CoreAnimationFun-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -470,6 +471,7 @@
 				GCC_PREFIX_HEADER = "CoreAnimationFun/CoreAnimationFun-Prefix.pch";
 				INFOPLIST_FILE = "CoreAnimationFun/CoreAnimationFun-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -533,6 +535,7 @@
 				828DB5A7192C4659008A6344 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		828DB5A8192C4659008A6344 /* Build configuration list for PBXNativeTarget "CoreAnimationFunTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +544,7 @@
 				828DB5AA192C4659008A6344 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

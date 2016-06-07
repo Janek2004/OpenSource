@@ -68,10 +68,11 @@
 @property (nonatomic,strong) UIImageView * pluto;
 @property (nonatomic,strong) UIImageView * eris;
 
+
 @end
 
 @implementation JMCView
-
+    BOOL _displayed = false;
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
     self =[super init];
@@ -97,7 +98,12 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    [self animatePlanets];
+    if (!_displayed){
+        [self animatePlanets];
+    }
+    _displayed = YES;
+    
+    
     CATransform3D t = CATransform3DIdentity;
     t = CATransform3DRotate(t, 20.0f * M_PI / 180.0f, 1, 0, 0);
     
@@ -120,6 +126,16 @@
     CGContextStrokeEllipseInRect(context, erisBoundingRect);
     
 }
+
+
+-(CGFloat)convertToLocal:(CGFloat)coords{
+    //maxium distance is eris
+    //
+    
+    
+    return  0;
+}
+
 
 -(void)animatePlanets{
     [self animateSun];
